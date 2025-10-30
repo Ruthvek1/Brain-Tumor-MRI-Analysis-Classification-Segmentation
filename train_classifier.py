@@ -15,7 +15,6 @@ import seaborn as sns
 # --- TODO: UPDATE THESE PATHS ---
 DATA_ROOT_DIR = 'Brain-Tumor-Dataset'
 TRAIN_DIR = os.path.join(DATA_ROOT_DIR, 'Training')
-# We no longer need the TEST_DIR for training/validation
 # ------------------------------
 
 INCEPTION_IMG_WIDTH = 299
@@ -42,10 +41,9 @@ def load_data_generators():
         width_shift_range=0.2,
         height_shift_range=0.2,
         fill_mode='nearest',
-        validation_split=0.2  # <-- ADDED THIS LINE
+        validation_split=0.2 
     )
 
-    # --- WE NO LONGER NEED A SEPARATE test_datagen ---
 
     # --- Generators for InceptionV3 ---
     # We specify 'subset='training'' to get the 80%
@@ -54,7 +52,7 @@ def load_data_generators():
         target_size=(INCEPTION_IMG_WIDTH, INCEPTION_IMG_HEIGHT),
         batch_size=BATCH_SIZE,
         class_mode='categorical',
-        subset='training'  # <-- ADDED THIS LINE
+        subset='training'  
     )
 
     # We create a new validation generator from the 20% split
@@ -63,8 +61,8 @@ def load_data_generators():
         target_size=(INCEPTION_IMG_WIDTH, INCEPTION_IMG_HEIGHT),
         batch_size=BATCH_SIZE,
         class_mode='categorical',
-        subset='validation',  # <-- ADDED THIS LINE
-        shuffle=False  # <-- ADDED THIS LINE (CRITICAL FOR REPORTING)
+        subset='validation',  
+        shuffle=False 
     )
 
     print("Class Indices:", inception_train_generator.class_indices)
@@ -119,8 +117,8 @@ def main():
 
     history = model.fit(
         train_generator,
-        # --- CHANGED ---
-        # Use np.ceil to ensure all data is used
+        
+        
         steps_per_epoch=int(np.ceil(train_generator.samples / BATCH_SIZE)),
         validation_data=validation_generator,
         validation_steps=int(np.ceil(validation_generator.samples / BATCH_SIZE)),
@@ -146,8 +144,7 @@ def main():
     true_classes = validation_generator.classes
     class_labels = list(validation_generator.class_indices.keys())
 
-    # --- CHANGED ---
-    # Removed the incorrect slicing, as 'shuffle=False' fixes the order
+    
     report = classification_report(true_classes, predicted_classes, target_names=class_labels)
     print(report)
     print("--- [Classifier] Script Finished. ---")
