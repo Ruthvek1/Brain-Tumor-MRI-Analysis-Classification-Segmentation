@@ -12,10 +12,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # --- Configuration ---
-# --- TODO: UPDATE THESE PATHS ---
 DATA_ROOT_DIR = 'Brain-Tumor-Dataset'
 TRAIN_DIR = os.path.join(DATA_ROOT_DIR, 'Training')
-# ------------------------------
+
 
 INCEPTION_IMG_WIDTH = 299
 INCEPTION_IMG_HEIGHT = 299
@@ -57,7 +56,7 @@ def load_data_generators():
 
     # We create a new validation generator from the 20% split
     inception_validation_generator = train_datagen.flow_from_directory(
-        TRAIN_DIR,  # <-- Still from TRAIN_DIR
+        TRAIN_DIR, 
         target_size=(INCEPTION_IMG_WIDTH, INCEPTION_IMG_HEIGHT),
         batch_size=BATCH_SIZE,
         class_mode='categorical',
