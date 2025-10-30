@@ -75,22 +75,23 @@ def preprocess_for_segmenter(image_pil):
 
 def get_segmentation_results(model, image_pil):
     """Gets the mask, highlighted image, and size."""
-    # 1. Get prediction
+    # 1. Get prediction (at 256x256)
     processed_image = preprocess_for_segmenter(image_pil)
     pred_mask = model.predict(processed_image)[0]
     pred_mask_binary = (pred_mask > 0.5).astype(np.uint8) * 255
 
-    # 2. Calculate size
-    tumor_pixels = np.sum(pred_mask_binary == 255)
-
-    # 3. Overlay mask on original image
+    # 2. Overlay mask on original image
     original_cv = np.array(image_pil.convert('RGB'))
+    # Resize mask to the original image's size for accurate display
     mask_resized = cv2.resize(pred_mask_binary, (original_cv.shape[1], original_cv.shape[0]))
 
     contours, _ = cv2.findContours(mask_resized, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     highlighted_image = original_cv.copy()
     cv2.drawContours(highlighted_image, contours, -1, (255, 0, 0), 2)  # Draw in red
+
+    # 3. Calculate size
+    tumor_pixels = np.sum(mask_resized == 255)
 
     return highlighted_image, tumor_pixels
 
@@ -99,6 +100,9 @@ def get_segmentation_results(model, image_pil):
 st.set_page_config(layout="wide", page_title="Brain Tumor Analyzer")
 st.title("🧠 Brain Tumor MRI Analyzer (Classifier + Segmenter)")
 st.markdown("Upload an MRI scan to get **both** the tumor type and its location/size.")
+
+
+pixel_spacing_mm = 0.10
 
 # Load models
 classifier_model = load_classifier_model()
@@ -133,8 +137,15 @@ else:
                 confidence = np.max(class_pred) * 100
 
                 # --- Task 2: Segmentation ---
-                highlighted_image, tumor_size = get_segmentation_results(segmenter_model, original_image)
+                highlighted_image, tumor_pixels = get_segmentation_results(segmenter_model, original_image)
 
+                area_per_pixel_mm2 = pixel_spacing_mm * pixel_spacing_mm
+
+                tumor_area_mm2 = tumor_pixels * area_per_pixel_mm2
+
+                tumor_area_cm2 = tumor_area_mm2 / 100
+
+                # --- Display Results ---
                 st.image(highlighted_image, caption="Scan with Highlighted Tumor", use_column_width=True)
 
                 st.subheader("Final Diagnosis:")
@@ -144,11 +155,14 @@ else:
                 st.write(f"Confidence: {confidence:.2f}%")
 
                 # Show segmentation result
-                if class_name != "No Tumor" and tumor_size > 10:
-                    st.metric(label="Estimated Tumor Size (relative)", value=f"{tumor_size} pixels")
-                    st.info(
-                        "Note: Pixel count is based on the 256x256 processed image. It shows the relative size of the detected area.")
+                if class_name != "No Tumor" and tumor_pixels > 10:
+
+                    st.metric(label="Estimated Tumor Area", value=f"{tumor_area_cm2:.2f} cm²")
+
                 elif class_name != "No Tumor":
                     st.warning("Tumor classified, but segmentation model could not find a distinct area.")
                 else:
                     st.success("No tumor was classified.")
+
+
+
