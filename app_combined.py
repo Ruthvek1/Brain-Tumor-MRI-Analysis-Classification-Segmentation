@@ -6,7 +6,6 @@ import cv2  # OpenCV
 import io
 import os
 
-
 # --- Configuration ---
 CLASSIFIER_MODEL_PATH = 'classifier_model.h5'
 SEGMENTER_MODEL_PATH = 'segmenter_model.h5'
@@ -26,23 +25,17 @@ def dice_coefficient(y_true, y_pred, smooth=1e-6):
     y_true_f = tf.keras.backend.flatten(y_true)
     y_pred_f = tf.keras.backend.flatten(y_pred)
     intersection = tf.keras.backend.sum(y_true_f * y_pred_f)
-    return (2. * intersection + smooth) / (
-        tf.keras.backend.sum(y_true_f) + tf.keras.backend.sum(y_pred_f) + smooth
-    )
+    return (2. * intersection + smooth) / (tf.keras.backend.sum(y_true_f) + tf.keras.backend.sum(y_pred_f) + smooth)
 
 
 # --- Model Loading Functions ---
 
 @st.cache_resource
 def load_classifier_model():
-    """Loads the InceptionV3 classifier model (safe mode off)."""
+    """Loads the InceptionV3 classifier model."""
     if not os.path.exists(CLASSIFIER_MODEL_PATH):
         return None
-    model = tf.keras.models.load_model(
-        CLASSIFIER_MODEL_PATH,
-        compile=False,
-        safe_mode=False   # ✅ prevents multi-input validation errors
-    )
+    model = tf.keras.models.load_model(CLASSIFIER_MODEL_PATH)
     return model
 
 
@@ -82,12 +75,15 @@ def preprocess_for_segmenter(image_pil):
 
 def get_segmentation_results(model, image_pil):
     """Gets the mask, highlighted image, and size."""
+    # 1. Get prediction
     processed_image = preprocess_for_segmenter(image_pil)
     pred_mask = model.predict(processed_image)[0]
     pred_mask_binary = (pred_mask > 0.5).astype(np.uint8) * 255
 
+    # 2. Calculate size
     tumor_pixels = np.sum(pred_mask_binary == 255)
 
+    # 3. Overlay mask on original image
     original_cv = np.array(image_pil.convert('RGB'))
     mask_resized = cv2.resize(pred_mask_binary, (original_cv.shape[1], original_cv.shape[0]))
 
@@ -151,8 +147,7 @@ else:
                 if class_name != "No Tumor" and tumor_size > 10:
                     st.metric(label="Estimated Tumor Size (relative)", value=f"{tumor_size} pixels")
                     st.info(
-                        "Note: Pixel count is based on the 256×256 processed image and reflects the relative detected area."
-                    )
+                        "Note: Pixel count is based on the 256x256 processed image. It shows the relative size of the detected area.")
                 elif class_name != "No Tumor":
                     st.warning("Tumor classified, but segmentation model could not find a distinct area.")
                 else:
