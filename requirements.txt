@@ -1,16 +1,22 @@
+# Streamlit web app
 streamlit==1.51.0
-opencv-python-headless==4.12.0.88
-scikit-learn==1.7.2
+
+# Core scientific + ML stack
+numpy==2.2.6
 pandas==2.3.3
-numpy==2.3.4
-pillow==12.0.0
-seaborn==0.13.2
+scikit-learn==1.7.2
 matplotlib==3.10.7
+seaborn==0.13.2
 tqdm==4.67.1
+pillow==12.0.0
 
-# TensorFlow ecosystem (keep only TensorFlow — it already includes Keras)
+# Computer vision
+opencv-python-headless==4.12.0.88
+
+# TensorFlow (includes Keras)
 tensorflow==2.20.0
-
-# Optional: explicitly include dependencies used
 absl-py
 protobuf
+
+# Compatibility hint for Streamlit Cloud
+# TensorFlow 2.20 officially supports Python 3.10–3.13
