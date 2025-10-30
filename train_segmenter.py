@@ -18,9 +18,7 @@ IMG_CHANNELS = 3
 DATA_ROOT_DIR = 'Brain-Tumor-Dataset'
 TRAIN_IMG_DIR = os.path.join(DATA_ROOT_DIR, 'Training')
 TRAIN_MASK_DIR = os.path.join(DATA_ROOT_DIR, 'Tumor-Mask')
-# ------------------------------
 
-# Folders that have masks
 TUMOR_CLASSES_WITH_MASKS = ['glioma', 'meningioma', 'pituitary_tumor']
 
 
