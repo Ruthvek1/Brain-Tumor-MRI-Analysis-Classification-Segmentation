@@ -141,12 +141,11 @@ The app offers the classification (e.g., Glioma Tumor) and the segmented mask is
 
 ## Conclusion
 
-This project successfully demonstrates the power of a dual-CNN pipeline for comprehensive brain tumor analysis.
+The given project manages to prove the strength of dual-CNN pipeline to analyze brain tumor in full.
+* **Key Finding 1:** nceptionV3 transfer learning is significantly better than training smaller models directly, since it has more than 20 per cent greater accuracy.
+* **Key Finding 2:**  The U-Net type model can be successfully trained on the given mask images to obtain the correct segmentation which is the key to the transition between the qualitative (there is a tumor) and quantitative ("the tumor is 2.14 cm²") analysis.
 
-* **Key Finding 1:** For classification, transfer learning with InceptionV3 is vastly superior to training smaller models from scratch, achieving over 20% higher accuracy.
-* **Key Finding 2:** A U-Net model can be effectively trained on the provided mask data to produce accurate segmentation, which is the key to moving from a qualitative ("there is a tumor") to a quantitative ("the tumor is 2.14 cm²") analysis.
-
-The final Streamlit application serves as a powerful and easy-to-use proof-of-concept for a tool that could one day assist radiologists by automating and accelerating the diagnostic process.
+The final Streamlit application is a potent and user-friendly proof-of-concept of what would one day be a helpful tool to radiologists through the automation and speeding up of the diagnostic procedure.
 
 ## References
 
