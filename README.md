@@ -36,9 +36,9 @@ Each model had a different preprocessing of the data to fit the input of the mod
 
 * **For Classification (InceptionV3):**
     * Images were made $299 \times 299$ pixels.
-    * Data was split $80/20$ into training and validation sets using the `validation_split` feature of Keras.
-    * Training images were augmented (rotation, zoom, shear, flip) to create a more robust model.
-    * Pixel values were rescaled from $[0, 255]$ to $[0, 1]$.
+    * The `validation_split` feature of Keras was used to split the data in 80/20 into training and validation sets.
+    * Images used as training were augmented (rotation, zoom, shear, flip) to form a more robust model.
+    * The rescaling of pixel values was done from $[0, 255]$ to $[0, 1]$.
 
 * **For Segmentation (U-Net):**
     * Images and their corresponding masks were resized to $256 \times 256$ pixels.
