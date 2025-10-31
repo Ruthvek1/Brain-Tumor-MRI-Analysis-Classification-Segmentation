@@ -7,8 +7,10 @@ The project is a one-stop solution to analysing brain tumor MRI scans. It employ
 
 All the pipeline is enclosed by an easy-to-use Streamlit web application.
 
-<img width="500" height="300" alt="mri" src="https://github.com/user-attachments/assets/6f4d5cab-8690-42b5-973e-76fa4fd2ee8d" />
-<img width="500" height="280" alt="Streamlit MRI" src="https://github.com/user-attachments/assets/ad50693d-1516-481d-aef9-a8aa4847f12e" />
+<img width="600" height="400" alt="mri" src="https://github.com/user-attachments/assets/6f4d5cab-8690-42b5-973e-76fa4fd2ee8d" />
+
+Screenshot of the Streamlit App showing a brain MRI with a red outline around the tumor and the classification 'Glioma Tumor'
+<img width="600" height="400" alt="Streamlit MRI" src="https://github.com/user-attachments/assets/ad50693d-1516-481d-aef9-a8aa4847f12e" />
 
 
 
