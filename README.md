@@ -41,9 +41,9 @@ Each model had a different preprocessing of the data to fit the input of the mod
     * The rescaling of pixel values was done from $[0, 255]$ to $[0, 1]$.
 
 * **For Segmentation (U-Net):**
-    * Images and their corresponding masks were resized to $256 \times 256$ pixels.
+    * The images and the masked images were scaled to $256 \times 256$ pixels.
     * Images were rescaled to $[0, 1]$.
-    * Masks were loaded as grayscale and binarized (pixels > 127 became 1, all others 0) to create a clear binary target.
+    * The masks were loaded and converted to grayscale and binarized (pixels > 127 became 1, all others 0) to have a distinct binary target.
 
 ## Methods
 
