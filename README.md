@@ -6,8 +6,9 @@ The project is a one-stop solution to analysing brain tumor MRI scans. It employ
 2.  **Segmentation**: Creates a pixel perfect mask to indicate the precise location and extent of the tumor, and computes its area in cm 2.
 
 All the pipeline is enclosed by an easy-to-use Streamlit web application.
-
+<p align="center">
 <img width="600" height="400" alt="mri" src="https://github.com/user-attachments/assets/6f4d5cab-8690-42b5-973e-76fa4fd2ee8d" />
+</p>
 <br>
 <br>
 <br>
