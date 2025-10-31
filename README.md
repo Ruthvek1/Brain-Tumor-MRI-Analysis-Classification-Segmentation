@@ -20,7 +20,9 @@ Screenshot of the Streamlit App showing a brain MRI with a red outline around th
 
 ## The Problem
 
-Brain tumors are a life-threatening condition, and their early and accurate diagnosis is critical for effective treatment planning. Radiologists manually analyze hundreds of MRI scans, a process that can be time-consuming and subjective. An automated system that can accurately classify the tumor type and precisely outline its location and size can act as a powerful "second opinion" for medical professionals, leading to faster and more reliable diagnoses.
+The dataset used in this project is the Brain Tumor MRI Dataset of Figshare. This data comprised 3459 T1-weighted contrast enhanced MRI images. The data set will be classified into four categories namely Glioma, Meningioma, Pituitary Tumor.
+
+An important aspect of such a dataset is that it includes a Tumor-Mask folder, a ground-truth segmentation mask of 3064 of the images (one of three types of tumor). This enables a supervised training of classification as well as segmentation models.
 
 ## Dataset
 
