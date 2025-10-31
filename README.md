@@ -119,7 +119,7 @@ This project is built in Python 3.9.
 ### Classification Performance
 
 The classification task was experimented using various different architectures at the beginning. An inceptionV3 transfer learning model was compared to a simple Multi-Layer Perceptron (MLP), as well as to a typical CNN (AlexNet).
-The findings indicate clearly that the InceptionV3 model is the better option, as it had a score of 82.49.
+The findings indicate clearly that the InceptionV3 model is the better option, as it had a score of 82.49%.
 
 | Model | Accuracy | F1-Score (Weighted) |
 | :--- | :--- | :--- |
@@ -127,11 +127,12 @@ The findings indicate clearly that the InceptionV3 model is the better option, a
 | AlexNet | ~61% | ~0.38 |
 | **InceptionV3** | **82.49%** | **0.83** |
 
-(Note: F1-Score from the original notebook was low due to an evaluation error; the 0.83 score is from the final, corrected script's classification report.)
 
 ### Segmentation & Combined Results
 
-The U-Net model successfully learns to produce precise binary masks for the tumor regions. The final Streamlit application successfully combines both models into a single diagnostic tool. The app provides the classification (e.g., "Glioma Tumor") and displays the segmented mask overlaid on the original image. It then uses the pixel count of the mask to provide a quantitative size calculation.
+
+The U-Net model is effective in learning to give accurate binary masks of the tumor regions. The Final Streamlit app manages to merge both the models in one diagnostic tool.
+The app offers the classification (e.g., Glioma Tumor) and the segmented mask is also presented over the original image. It then counts the number of pixels of the mask to give more of a quantitative size number.
 
 | Original Image | Ground Truth Mask | Final App Prediction |
 | :---: | :---: | :---: |
