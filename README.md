@@ -24,6 +24,10 @@ Here is a brief demo of the application in action.
 ![demo-video-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6f1b0fa3-8f33-464f-a0df-5e5785987ff9)
 </p>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6f1b0fa3-8f33-464f-a0df-5e5785987ff9" alt="demo-video-ezgif com-video-to-gif-converter" />
+</p>
+
 
 ## The Problem
 
