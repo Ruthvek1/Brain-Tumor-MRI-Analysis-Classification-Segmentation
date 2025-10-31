@@ -118,7 +118,8 @@ This project is built in Python 3.9.
 
 ### Classification Performance
 
-Early experiments were conducted to compare different architectures for the classification task. A simple Multi-Layer Perceptron (MLP) and a standard CNN (AlexNet) were trained and compared against the InceptionV3 transfer learning model. The results clearly show that the InceptionV3 model is the superior choice, achieving 82.49% accuracy.
+The classification task was experimented using various different architectures at the beginning. An inceptionV3 transfer learning model was compared to a simple Multi-Layer Perceptron (MLP), as well as to a typical CNN (AlexNet).
+The findings indicate clearly that the InceptionV3 model is the better option, as it had a score of 82.49.
 
 | Model | Accuracy | F1-Score (Weighted) |
 | :--- | :--- | :--- |
