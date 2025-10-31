@@ -32,10 +32,10 @@ A crucial part of this dataset is the inclusion of a Tumor-Mask folder, which pr
 
 ## Data Preprocessing
 
-The data was preprocessed differently for each model to meet its specific input requirements:
+Each model had a different preprocessing of the data to fit the input of the model:
 
 * **For Classification (InceptionV3):**
-    * Images were resized to $299 \times 299$ pixels.
+    * Images were made $299 \times 299$ pixels.
     * Data was split $80/20$ into training and validation sets using the `validation_split` feature of Keras.
     * Training images were augmented (rotation, zoom, shear, flip) to create a more robust model.
     * Pixel values were rescaled from $[0, 255]$ to $[0, 1]$.
