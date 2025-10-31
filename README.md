@@ -11,9 +11,9 @@ All the pipeline is enclosed by an easy-to-use Streamlit web application.
 </p>
 <br>
 <br>
-<br>
+<p align="center">
 <img width="600" height="400" alt="Streamlit MRI" src="https://github.com/user-attachments/assets/ad50693d-1516-481d-aef9-a8aa4847f12e" />
-
+</p>
 Screenshot of the Streamlit App showing a brain MRI with a red outline around the tumor and the classification 'Glioma Tumor'
 
 
@@ -51,8 +51,9 @@ Each model had a different preprocessing of the data to fit the input of the mod
 This project uses a dual model pipeline each of which is a specialized Convolutional Neural Network (CNN) that is optimized to perform its job.
 <br>
 <br>
+<p align="center">
 <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/e207cf7c-4930-4b82-a0d8-3be7c78278f4" />
-
+</p>
 
 ### 1. Classification Model: InceptionV3 (Transfer Learning)
 
@@ -66,8 +67,9 @@ In this project, transfer learning with InceptionV3 architecture is used in orde
 In order to locate the location and the size of the tumor, this project uses a U-Net model.
 
 * **Why U-Net?** The U-Net is biomedical image segmentation available in the industry. Its encoder-decoder structure with skip connections makes it possible to accumulate fine-grained spatial data (via the encoder) to be processed with high-level contextual data (via the decoder). This gives it a very high level of precision in defining complex shapes such as tumors.
-
-<img width="500" height="500" alt="Gemini_Generated_Image_lbssfalbssfalbss" src="https://github.com/user-attachments/assets/0f3d71ad-3841-434f-b3d8-788bbc76c82a" /><br>
+<p align="center">
+<img width="500" height="500" alt="Gemini_Generated_Image_lbssfalbssfalbss" src="https://github.com/user-attachments/assets/0f3d71ad-3841-434f-b3d8-788bbc76c82a" /></p> 
+<br>
 
 
 **How it works:** The model is fed with a $256 \times 256$ MRI scan and outputs a $256 \times 256$ binary "mask" with pixels that are either labeled as tumor 1 or not tumor 0.The mask is then applied to the original image in order to obtain the contour and compute the area.
