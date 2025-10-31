@@ -1,13 +1,14 @@
 # Brain Tumor MRI Analysis: Classification & Segmentation
 
-This project is an all-in-one tool for the analysis of brain tumor MRI scans. It uses a dual-model deep learning pipeline to perform two critical tasks:
+The project is a one-stop solution to analysing brain tumor MRI scans. It employs a two model deep learning pipeline to carry out two important functions:
 
-1.  **Classification**: Identifies the type of tumor from one of four classes: Glioma, Meningioma, Pituitary Tumor.
-2.  **Segmentation**: Generates a pixel-perfect mask to show the exact location and boundaries of the tumor, then calculates its area in cm².
+1.  **Classification**: Determines the type of tumor of one of four categories: Glioma, Meningioma, Pituitary Tumor.
+2.  **Segmentation**: Creates a pixel perfect mask to indicate the precise location and extent of the tumor, and computes its area in cm 2.
 
-The entire pipeline is wrapped in a user-friendly Streamlit web application.
+All the pipeline is enclosed by an easy-to-use Streamlit web application.
 
-![App Screenshot](Brain-Tumor-MRI-With-Localisation-Masks.png)
+<img width="1344" height="768" alt="mri" src="https://github.com/user-attachments/assets/6f4d5cab-8690-42b5-973e-76fa4fd2ee8d" />
+
 
 ## The Problem
 
