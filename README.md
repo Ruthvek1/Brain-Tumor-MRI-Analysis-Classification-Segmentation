@@ -68,9 +68,8 @@ In order to locate the location and the size of the tumor, this project uses a U
 
 <img width="500" height="500" alt="Gemini_Generated_Image_lbssfalbssfalbss" src="https://github.com/user-attachments/assets/0f3d71ad-3841-434f-b3d8-788bbc76c82a" />
 
-![U-Net Architecture](assets/unet.png)
+* **How it works:** The model is fed with a $256 \times 256$ MRI scan and outputs a $256 \times 256$ binary "mask" with pixels that are either labeled as tumor 1 or not tumor 0.The mask is then applied to the original image in order to obtain the contour and compute the area.
 
-* **How it works:** The model takes a $256 \times 256$ MRI scan as input and outputs a $256 \times 256$ binary "mask," where each pixel is classified as either "tumor" (1) or "not tumor" (0). This mask is then used to draw the contour on the original image and calculate the area.
 
 ## Steps to Run the Code
 
