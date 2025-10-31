@@ -137,7 +137,7 @@ The app offers the classification (e.g., Glioma Tumor) and the segmented mask is
 | Original Image | Ground Truth Mask | Final App Prediction |
 | :---: | :---: | :---: |
 | ![G178](https://github.com/user-attachments/assets/996001f7-e0d8-4e05-86ca-aaec95f71ec2)| ![G178](https://github.com/user-attachments/assets/5d8dd516-6088-4a66-a003-3ea7f60b6034)| ![g178 r](https://github.com/user-attachments/assets/7efef0d1-79e0-416b-b5de-60c7f1ea9167)|
-| ![Original MRI](assets/test_image_2.jpg) | ![Ground Truth Mask](assets/test_mask_2.jpg) | ![App Prediction](assets/app_prediction_2.png) |
+|![M15](https://github.com/user-attachments/assets/dd78ad1d-42a1-49f0-b45a-ab383312a27f)| ![M15](https://github.com/user-attachments/assets/3c07b0ef-049d-4147-ad13-f92757dea833)| ![m15](https://github.com/user-attachments/assets/0f64bdb3-bd1a-4c81-8af9-3e9d3cae172c)|
 
 ## Conclusion
 
