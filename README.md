@@ -48,6 +48,8 @@ Each model had a different preprocessing of the data to fit the input of the mod
 ## Methods
 
 This project uses a dual model pipeline each of which is a specialized Convolutional Neural Network (CNN) that is optimized to perform its job.
+<br>
+<br>
 <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/e207cf7c-4930-4b82-a0d8-3be7c78278f4" />
 
 ![Pipeline Diagram](assets/pipeline.png)
