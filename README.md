@@ -11,7 +11,6 @@ All the pipeline is enclosed by an easy-to-use Streamlit web application.
 <br>
 <br>
 <br>
-<br>
 <img width="600" height="400" alt="Streamlit MRI" src="https://github.com/user-attachments/assets/ad50693d-1516-481d-aef9-a8aa4847f12e" />
 
 Screenshot of the Streamlit App showing a brain MRI with a red outline around the tumor and the classification 'Glioma Tumor'
