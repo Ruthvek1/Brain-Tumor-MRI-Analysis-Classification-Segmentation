@@ -153,10 +153,10 @@ The final Streamlit application is a potent and user-friendly proof-of-concept o
 ## References
 
 1.  Cheng, J. (2017). brain tumor dataset. Figshare. https://doi.org/10.6084/m9.figshare.1512427.v5
-2.  Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation.
-3.  Szegedy, C., Vanhoucke, V., Ioffe, S., et al. (2016). Rethinking the Inception Architecture for Computer Vision.
-4.  Chahal, P. K., Pandey, S., & Goel, S. (2020). A Survey On Brain Tumor Detection Techniques For MR images.
-5.  Pereira, S., Pinto, A., Alves, V., & Silva, C. A. (2016). Brain Tumor Segmentation Using Convolutional Neural Networks In MRI Images.
-6.  Cheng, J., Huang, W., Cao, S., et al. (2015). Enhanced Performance of Brain Tumor Classification Via Tumor Region Augmentation & Partition.
-7.  Cheng, J., Yang, W., Huang, M., et al. (2016). Retrieval of Brain Tumors By Adaptive Spatial Pooling & Fisher Vector Representation.
-8.  Deepa, A.R., & Sam Emmanuel, W.R. (2019). A Comprehensive Review And Analysis On MRI Based Brain Tumor Segmentation.
+2.  Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation.https://arxiv.org/abs/1505.04597
+3.  Szegedy, C., Vanhoucke, V., Ioffe, S., et al. (2016). Rethinking the Inception Architecture for Computer Vision.https://ieeexplore.ieee.org/document/7780677
+4.  Chahal, P. K., Pandey, S., & Goel, S. (2020). A Survey On Brain Tumor Detection Techniques For MR images.https://www.researchgate.net/publication/341295370_A_survey_on_brain_tumor_detection_techniques_for_MR_images
+5.  Pereira, S., Pinto, A., Alves, V., & Silva, C. A. (2016). Brain Tumor Segmentation Using Convolutional Neural Networks In MRI Images.https://ieeexplore.ieee.org/document/7426413
+6.  Cheng, J., Huang, W., Cao, S., et al. (2015). Enhanced Performance of Brain Tumor Classification Via Tumor Region Augmentation & Partition.https://www.researchgate.net/publication/277714858_Enhanced_Performance_of_Brain_Tumor_Classification_via_Tumor_Region_Augmentation_and_Partition
+7.  Cheng, J., Yang, W., Huang, M., et al. (2016). Retrieval of Brain Tumors By Adaptive Spatial Pooling & Fisher Vector Representation.https://www.researchgate.net/publication/302946294_Retrieval_of_Brain_Tumors_by_Adaptive_Spatial_Pooling_and_Fisher_Vector_Representation
+8.  Deepa, A.R., & Sam Emmanuel, W.R. (2019). A Comprehensive Review And Analysis On MRI Based Brain Tumor Segmentation.https://www.semanticscholar.org/paper/A-Comprehensive-Review-And-Analysis-On-MRI-Based-A.R.Deepa-Emmanuel/a151fea0bb089b7eaa2a454bc2cdd6347e3bccb9#paper-topics
