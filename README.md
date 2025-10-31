@@ -52,19 +52,21 @@ This project uses a dual model pipeline each of which is a specialized Convoluti
 <br>
 <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/e207cf7c-4930-4b82-a0d8-3be7c78278f4" />
 
-![Pipeline Diagram](assets/pipeline.png)
 
 ### 1. Classification Model: InceptionV3 (Transfer Learning)
 
-To identify the tumor type, this project employs transfer learning using the InceptionV3 architecture.
+In this project, transfer learning with InceptionV3 architecture is used in order to diagnose the type of the tumor.
 
-* **Why InceptionV3?** Instead of training a CNN from scratch, we use a model pre-trained on the massive ImageNet dataset. This model already possesses a powerful understanding of shapes, textures, and features. We "freeze" these layers and only train a new "head" (a few Dense layers) to adapt this knowledge to our specific task of classifying brain tumors. This is significantly faster and more accurate than training a smaller model from scratch.
+* **Why InceptionV3?** We do not need to train a CNN ourselves, using one that has already been trained on the giant ImageNet dataset. This model already has a strong conceptualisation of shapes, textures and features. These layers are frozen and we only need to train a new "head" (some Dense layers) to fit this knowledge to our task of classifying brain tumors. It is much faster and more precise than training a smaller model blanketed.
+
 
 ### 2. Segmentation Model: U-Net
 
-To find the tumor's location and size, this project implements a U-Net model.
+In order to locate the location and the size of the tumor, this project uses a U-Net model.
 
-* **Why U-Net?** The U-Net is the industry standard for biomedical image segmentation. Its unique encoder-decoder architecture with "skip connections" allows it to capture fine-grained spatial information (from the encoder) and combine it with high-level contextual information (from the decoder). This makes it exceptionally good at outlining complex shapes like tumors with high precision.
+* **Why U-Net?** The U-Net is biomedical image segmentation available in the industry. Its encoder-decoder structure with skip connections makes it possible to accumulate fine-grained spatial data (via the encoder) to be processed with high-level contextual data (via the decoder). This gives it a very high level of precision in defining complex shapes such as tumors.
+
+<img width="500" height="500" alt="Gemini_Generated_Image_lbssfalbssfalbss" src="https://github.com/user-attachments/assets/0f3d71ad-3841-434f-b3d8-788bbc76c82a" />
 
 ![U-Net Architecture](assets/unet.png)
 
